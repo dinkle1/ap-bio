@@ -282,10 +282,8 @@ function Section8b() {
       <div className="container">
         <SectionHeader
           num="09"
-          eyebrow="Who Is Building This?"
           title='Two bets on the <em>same brain.</em>'
           sub="Two of the most-watched BCI companies are betting on opposite strategies. Neuralink goes inside the skull for maximum signal. Kernel stays outside for maximum access. Click either card to focus."
-          align="split"
         />
 
         {/* axis label */}

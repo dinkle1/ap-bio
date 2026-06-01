@@ -143,10 +143,8 @@ function Section1() {
       <div className="container">
         <SectionHeader
           num="01"
-          eyebrow="The Big Idea"
-          title='What is a <em>brain-computer<br/>interface</em>?'
+          title='What is a <em>brain-computer interface</em>?'
           sub="A direct link from your brain to a machine, no hands, no voice, no muscle in between. Three steps: record, decode, act."
-          align="split"
         />
         <Reveal>
           <PipelineDiagram />
@@ -389,10 +387,8 @@ function Section2() {
       <div className="container">
         <SectionHeader
           num="02"
-          eyebrow="The Surprising Thing"
           title='The brain doesn&rsquo;t know <em>it&rsquo;s paralyzed.</em>'
           sub="When the spinal cord is severed, the brain keeps broadcasting. Motor cortex lights up exactly the way it would in an uninjured person. BCIs are just building a new receiver."
-          align="split"
         />
         <Reveal>
           <SpinalBypass />
@@ -569,7 +565,6 @@ function Section3() {
           eyebrow="Modalities"
           title='Two ways to <em>listen</em> to a brain.'
           sub="The biggest divide in BCI: do you need to cut the skull open? Three real systems sit on a spectrum from cap-on-head to electrodes-in-cortex. Each makes a trade."
-          align="split"
         />
         <Section3Cards />
 

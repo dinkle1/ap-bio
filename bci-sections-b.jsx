@@ -267,10 +267,8 @@ function Section4() {
       <div className="container">
         <SectionHeader
           num="04"
-          eyebrow="Decoding"
-          title='Teaching a computer<br/>to <em>read your mind.</em>'
+          title='Teaching a computer to <em>read your mind.</em>'
           sub="Recording is half the job. The other half is figuring out what a pattern of firings means. The trick is to train a model to recognize it, the same way you would train one to recognize a face."
-          align="split"
         />
         <Reveal>
           <DecoderDemo />
@@ -461,10 +459,8 @@ function Section5() {
       <div className="container">
         <SectionHeader
           num="05"
-          eyebrow="In Practice"
-          title='From the lab<br/>to <em>real life.</em>'
+          title='From the lab to <em>real life.</em>'
           sub="Three places BCIs are working today for people with paralysis. Most success has been in communication. Motor restoration and pain management are catching up fast."
-          align="split"
         />
         <div style={{ display:'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           <Reveal>
@@ -684,9 +680,8 @@ function Section6() {
         <SectionHeader
           num="06"
           eyebrow="The Breakthrough"
-          title='A paralyzed man walked again.<br/>The system <em>might be healing him.</em>'
+          title='A paralyzed man walked again. The system <em>might be healing him.</em>'
           sub="In 2023, a Nature paper described something that would have seemed impossible a decade ago: a wireless brain-spine interface let a paralyzed man walk naturally, and may be helping his nervous system rewire itself."
-          align="split"
         />
         <Reveal>
           <BrainSpineFlow />

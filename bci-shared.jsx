@@ -154,28 +154,22 @@ function ScrollProgress() {
   );
 }
 
-// SectionHeader: eyebrow + display title + optional subtitle, two-column or stacked
-function SectionHeader({ num, eyebrow, title, sub, align = 'left' }) {
+// SectionHeader: optional eyebrow + display title + optional subtitle, always stacked
+function SectionHeader({ num, eyebrow, title, sub }) {
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: align === 'split' ? '1fr 1fr' : '1fr',
-      gap: 'clamp(24px, 4vw, 80px)',
-      alignItems: 'end',
-      marginBottom: 60,
-    }}>
-      <div>
+    <div style={{ marginBottom: 64 }}>
+      {eyebrow && (
         <Reveal>
           <Eyebrow num={num}>{eyebrow}</Eyebrow>
         </Reveal>
-        <Reveal delay={80}>
-          <h2 className="h2" style={{ marginTop: 18 }}
-            dangerouslySetInnerHTML={{ __html: title }} />
-        </Reveal>
-      </div>
+      )}
+      <Reveal delay={eyebrow ? 80 : 0}>
+        <h2 className="h2" style={{ marginTop: eyebrow ? 16 : 0, maxWidth: '22ch' }}
+          dangerouslySetInnerHTML={{ __html: title }} />
+      </Reveal>
       {sub && (
         <Reveal delay={140}>
-          <p className="body" style={{ fontSize: 18, color: 'var(--mute)', maxWidth: 520, justifySelf: align === 'split' ? 'end' : 'start' }}>{sub}</p>
+          <p className="body" style={{ fontSize: 17, color: 'var(--mute)', maxWidth: '62ch', marginTop: 18, lineHeight: 1.65 }}>{sub}</p>
         </Reveal>
       )}
     </div>
