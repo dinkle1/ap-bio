@@ -168,9 +168,10 @@ function Section1() {
 
         <Reveal delay={100}>
           <p className="body" style={{ marginTop: 100, maxWidth: 720, fontSize: 17 }}>
-            The idea goes back decades. A landmark 2002 paper by Jonathan Wolpaw and colleagues<FN n={1} /> was the first to formally lay out the framework that modern BCIs still follow: electrical activity recorded from the scalp could serve as a reliable, non-muscular channel for people who cannot move or speak. The science gets complicated fast. The core idea stays simple: your brain is talking, and we are finally learning how to listen.
+            The idea goes back decades. A landmark 2002 paper by Jonathan Wolpaw and colleagues<FN n={1} /> articulated the framework that modern BCIs still follow: electrical activity recorded from the scalp can serve as a reliable, non-muscular channel for people who cannot move or speak. The science gets complicated fast. The core idea stays simple: your brain is talking, and we are finally learning how to listen.
           </p>
         </Reveal>
+        <NeuronPanel />
       </div>
     </section>
   );
@@ -404,7 +405,7 @@ function Section2() {
             <p className="body">
               The spinal cord acts like a cable between your brain and your body. Paralysis happens when that cable gets cut. The brain is still sending messages like &ldquo;move my left hand&rdquo; or &ldquo;take a step,&rdquo; but those messages cannot get through. They are being broadcast into silence.
               <br/><br/>
-              Neuroscientists have shown that when a person with paralysis simply <em style={{color:'var(--text)', fontStyle:'italic'}}>imagines</em> moving their arm, their motor cortex lights up with nearly the same activity as it would in an uninjured person. <strong>That neural activity is the raw material a BCI works with.</strong>
+              Neuroscientists have shown that when a person with paralysis simply <em style={{color:'var(--text)', fontStyle:'italic'}}>imagines</em> moving their arm, their motor cortex generates activity patterns that a BCI can read — even though those patterns are not identical to actual movement. <strong>That preserved neural activity is the raw material a BCI works with.</strong>
             </p>
           </Reveal>
         </div>
@@ -613,4 +614,115 @@ function Section3Cards() {
   );
 }
 
-Object.assign(window, { Section1, Section2, Section3, PipelineDiagram, SpinalBypass });
+function NeuronPanel() {
+  const W = 560, H = 160;
+  const mvToY = mv => ((55 - mv) / 145) * 140 + 10;
+  const rY = mvToY(-70);
+  const tY = mvToY(-55);
+  const pY = mvToY(40);
+  const hY = mvToY(-80);
+  const trace = [
+    `M 0,${rY.toFixed(1)}`, `L 90,${rY.toFixed(1)}`,
+    `C 105,${rY.toFixed(1)} 108,${tY.toFixed(1)} 115,${tY.toFixed(1)}`,
+    `C 122,${tY.toFixed(1)} 128,${pY.toFixed(1)} 138,${pY.toFixed(1)}`,
+    `C 150,${pY.toFixed(1)} 165,${rY.toFixed(1)} 175,${rY.toFixed(1)}`,
+    `C 183,${rY.toFixed(1)} 196,${hY.toFixed(1)} 210,${hY.toFixed(1)}`,
+    `C 232,${hY.toFixed(1)} 265,${rY.toFixed(1)} 282,${rY.toFixed(1)}`,
+    `L ${W},${rY.toFixed(1)}`,
+  ].join(' ');
+
+  const gridMvs = [
+    { mv: 40, label: '+40' }, { mv: 0, label: '0' }, { mv: -70, label: '−70' },
+  ];
+
+  const steps = [
+    {
+      num: '①', color: 'var(--mute)',
+      title: 'Resting state  −70 mV',
+      body: 'Na⁺/K⁺ ATPase pumps 3 Na⁺ out for every 2 K⁺ in, keeping the interior negative. K⁺ leak channels let potassium slowly escape, reinforcing the electrochemical gradient.',
+    },
+    {
+      num: '②', color: 'var(--electric)',
+      title: 'Threshold → depolarization',
+      body: 'At ~−55 mV, voltage-gated Na⁺ channels open. Na⁺ floods in along its electrochemical gradient, driving membrane potential to ~+40 mV. This all-or-none response is the action potential.',
+    },
+    {
+      num: '③', color: 'var(--signal)',
+      title: 'Repolarization',
+      body: 'Na⁺ channels inactivate. Delayed voltage-gated K⁺ channels open — K⁺ flows out, restoring the negative interior. Full spike duration: ~1–2 ms.',
+    },
+    {
+      num: '④', color: 'var(--mute)',
+      title: 'Hyperpolarization · refractory',
+      body: 'Brief undershoot to ~−80 mV as K⁺ channels close slowly. The refractory period prevents backward propagation, enforcing one-way signaling down the axon.',
+    },
+    {
+      num: '⑤', color: '#9aff9c',
+      title: 'Synapse: Ca²⁺ → transmitter release',
+      body: 'At the axon terminal, depolarization opens voltage-gated Ca²⁺ channels. Ca²⁺ influx triggers vesicle fusion and neurotransmitter release — glutamate (excitatory) or GABA (inhibitory) — onto the next cell.',
+    },
+  ];
+
+  return (
+    <Reveal delay={180}>
+      <div className="panel" style={{ marginTop: 60, overflow: 'hidden' }}>
+        <div className="panel__chrome">
+          <span className="panel__chrome-name">AP biology · action potential</span>
+          <span>the electrical event BCIs intercept</span>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }}>
+          <div style={{ padding: '28px 24px', borderRight: '1px solid var(--line)' }}>
+            <div className="mono" style={{ color: 'var(--mute-2)', marginBottom: 12 }}>membrane potential · mV vs. time</div>
+            <svg viewBox={`0 0 ${W} ${H}`} width="100%">
+              <defs>
+                <filter id="ap-glow"><feGaussianBlur stdDeviation="2.5" /></filter>
+              </defs>
+              {gridMvs.map(({ mv, label }) => {
+                const y = mvToY(mv);
+                return (
+                  <g key={mv}>
+                    <line x1="46" x2={W} y1={y} y2={y} stroke="rgba(190,210,255,0.07)" strokeDasharray="2 4" />
+                    <text x="42" y={y + 3.5} textAnchor="end" fontFamily="var(--mono)" fontSize="9" fill="rgba(190,210,255,0.4)">{label}</text>
+                  </g>
+                );
+              })}
+              <text x="44" y={tY - 5} textAnchor="end" fontFamily="var(--mono)" fontSize="8" fill="var(--warn)">threshold</text>
+              <line x1="90" x2="115" y1={tY} y2={tY} stroke="var(--warn)" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.6" />
+              <path d={trace} stroke="var(--electric)" strokeWidth="5" fill="none" opacity="0.15" filter="url(#ap-glow)" />
+              <path d={trace} stroke="var(--electric)" strokeWidth="2" fill="none" />
+              <text x="122" y={mvToY(10)} fontFamily="var(--mono)" fontSize="8" fill="rgba(76,240,255,0.8)">Na⁺ in</text>
+              <text x="178" y={mvToY(10)} fontFamily="var(--mono)" fontSize="8" fill="rgba(106,160,255,0.8)">K⁺ out</text>
+              <circle cx="138" cy={pY} r="3" fill="var(--electric)" />
+              <line x1="138" x2="138" y1={pY - 4} y2={pY - 14} stroke="var(--electric)" strokeWidth="0.8" />
+              <text x="138" y={pY - 18} textAnchor="middle" fontFamily="var(--mono)" fontSize="9" fill="var(--electric)">+40 mV</text>
+              <text x="50" y={H - 4} fontFamily="var(--mono)" fontSize="8" fill="var(--mute-2)">resting</text>
+              <text x="130" y={H - 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="8" fill="var(--electric)">depol.</text>
+              <text x="194" y={H - 4} textAnchor="middle" fontFamily="var(--mono)" fontSize="8" fill="var(--signal)">repol.</text>
+              <text x="300" y={H - 4} fontFamily="var(--mono)" fontSize="8" fill="var(--mute-2)">refractory → resting</text>
+            </svg>
+            <div style={{ marginTop: 16, padding: '12px 14px', background: 'rgba(76,240,255,0.04)', borderRadius: 8, border: '1px solid rgba(76,240,255,0.12)' }}>
+              <div className="mono" style={{ color: 'var(--electric)', marginBottom: 6 }}>BCI intercept point</div>
+              <div className="body" style={{ fontSize: 13, lineHeight: 1.55 }}>Each spike creates an extracellular voltage blip (~100 µV–1 mV, ~1 ms duration). A Utah array electrode within 50–100 µm detects this directly. EEG, by contrast, averages summed field currents from millions of synchronously active cells — which is why scalp signals are orders of magnitude blurrier.</div>
+            </div>
+          </div>
+          <div style={{ padding: '28px 32px' }}>
+            <div className="mono" style={{ color: 'var(--mute-2)', marginBottom: 18 }}>mechanism · step by step</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {steps.map(s => (
+                <div key={s.num} style={{ display: 'grid', gridTemplateColumns: '20px 1fr', gap: 10, alignItems: 'start' }}>
+                  <span className="mono" style={{ color: s.color, fontSize: 13, lineHeight: 1.4 }}>{s.num}</span>
+                  <div>
+                    <div className="mono" style={{ color: s.color, marginBottom: 3, fontSize: 11 }}>{s.title}</div>
+                    <div className="body" style={{ fontSize: 13, color: 'var(--mute)', lineHeight: 1.55 }}>{s.body}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+Object.assign(window, { Section1, Section2, Section3, PipelineDiagram, SpinalBypass, NeuronPanel });

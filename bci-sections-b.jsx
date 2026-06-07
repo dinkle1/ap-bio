@@ -277,8 +277,8 @@ function Section4() {
           {[
             { stat:'2D', label:'cursor control', detail:'Early systems hit 70–80% accuracy moving a cursor in two dimensions.' },
             { stat:'3D', label:'robotic arms', detail:'More recent systems guide arms to reach for objects in 3D space.' },
-            { stat:'90', label:'characters/min', detail:'A 2021 BrainGate participant typed by imagining handwriting at normal texting speed.' },
-            { stat:'62', label:'words/min · speech', detail:'Speech BCIs decode attempted speech directly from cortex, in near-real time.' },
+            { stat:'90', label:'characters/min', detail:<>A 2021 BrainGate participant typed by imagining handwriting — approaching smartphone texting speed.<FN n={7}/></> },
+            { stat:'62', label:'words/min · speech', detail:<>Speech BCIs decode attempted speech directly from cortex, in near-real time.<FN n={8}/></> },
           ].map((m, i) => (
             <Reveal key={m.stat} delay={i * 80}>
               <div style={{ borderTop: '1px solid var(--electric)', paddingTop: 16 }}>

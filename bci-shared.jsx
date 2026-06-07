@@ -76,10 +76,12 @@ function Eyebrow({ children, num }) {
 const CITATIONS = {
   1: 'Wolpaw et al., 2002',
   2: 'Saibene et al., 2023',
-  3: 'Hochberg et al., 2023',
+  3: 'Rubin et al., 2023',
   4: 'Lorach et al., 2023',
   5: 'Boonstra, 2025',
   6: 'Slutzky, 2019',
+  7: 'Willett et al., 2021',
+  8: 'Willett et al., 2023',
 };
 function FN({ n }) {
   const txt = CITATIONS[n] || `Ref ${n}`;

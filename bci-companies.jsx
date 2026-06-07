@@ -335,7 +335,7 @@ function Section8b() {
               specs={[
                 { k: 'approach',     v: 'Wearable optical helmet', big: true },
                 { k: 'modality',     v: 'TD-fNIRS (time-domain near-infrared spectroscopy)' },
-                { k: 'channels',     v: '~2,800 channels from 52 modules' },
+                { k: 'channels',     v: '~2,100 source-detector channels from 52 modules' },
                 { k: 'surgery',      v: 'None. Put it on, scan in 30 minutes.' },
                 { k: 'humans',       v: 'Hundreds of scans across partner clinics' },
                 { k: 'best for',     v: 'Brain health tracking, depression, MCI detection' },

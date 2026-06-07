@@ -73,7 +73,7 @@ function LimitRow({ data }) {
 function EthicsPanel() {
   const items = [
     { q:'Who owns your neural data?', a:'A BCI records the most intimate data imaginable: the electrical patterns of your thoughts. When a company implants a device in your brain, who owns the data it generates? Most countries have no laws addressing this. Only a handful of U.S. states have begun to.', n:5 },
-    { q:'What happens when the company shuts down?', a:'Not hypothetical. In 2024 both Synchron and Neuralink faced questions about long-term device support. If you have an implant and the maker goes bankrupt, who maintains it? Who removes it safely?' },
+    { q:'What happens when the company shuts down?', a:'Not hypothetical. In 2024, Neuralink faced scrutiny over long-term device support after thread retraction in the first patient raised durability questions. If you have an implant and the maker goes bankrupt, who maintains it? Who removes it safely?' },
     { q:'Is "voluntary consent" really voluntary?', a:'People with severe paralysis are often desperate. When a BCI is your only hope of communicating with your family, the line between hope and informed consent gets blurry. Bioethicists call this "therapeutic misconception".', n:5 },
     { q:'What about enhancement?', a:'Once BCIs reliably restore function in injured people, the next question is whether they should also enhance healthy ones. Better memory. Faster reaction time. Brain-to-brain communication. These are not sci-fi questions any more. They are policy decisions for the next decade.' },
   ];
@@ -332,6 +332,14 @@ function Biblio() {
       t:'Brain-machine interfaces: Powerful tools for clinical treatment and neuroscientific investigations.', j:'The Neuroscientist 25(2), 139–154.',
       doi:'10.1177/1073858418775355', pmid:'29772957',
       url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC6611552/' },
+    { n:7, a:'Willett, F. R., Avansino, D. T., Hochberg, L. R., Henderson, J. M., & Shenoy, K. V.', y:'2021',
+      t:'High-performance brain-to-text communication via handwriting.', j:'Nature 593(7858), 249–254.',
+      doi:'10.1038/s41586-021-03506-2', pmid:'33981047',
+      url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC8163299/' },
+    { n:8, a:'Willett, F. R., Kunz, E. M., Fan, C., et al.', y:'2023',
+      t:'A high-performance speech neuroprosthesis.', j:'Nature 620(7976), 1031–1036.',
+      doi:'10.1038/s41586-023-06377-x', pmid:'37498468',
+      url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC10468393/' },
   ];
   return (
     <section id="refs" className="section" style={{ borderTop:'1px solid var(--line)' }}>
