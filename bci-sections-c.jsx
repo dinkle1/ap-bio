@@ -17,7 +17,7 @@ function Section7() {
         <SectionHeader
           num="07"
           title='The hard problems we <em>haven&rsquo;t solved.</em>'
-          sub="BCIs are genuinely remarkable. They're also genuinely limited. The bars below show roughly where the field is on each problem, against what it would need to be for a real consumer product."
+          sub="BCIs are severely limited. The bars below show roughly where the field is on each problem, against what it would need to be for a real consumer product."
         />
         <Reveal>
           <div className="panel" style={{ padding: '28px 32px' }}>
@@ -72,10 +72,10 @@ function LimitRow({ data }) {
 // SECTION 8 — Ethics: who owns your brain data?
 function EthicsPanel() {
   const items = [
-    { q:'Who owns your neural data?', a:'A BCI records the most intimate data imaginable: the electrical patterns of your thoughts. When a company implants a device in your brain, who owns the data it generates? Most countries have no laws addressing this. Only a handful of U.S. states have begun to.', n:5 },
-    { q:'What happens when the company shuts down?', a:'Not hypothetical. In 2024, Neuralink faced scrutiny over long-term device support after thread retraction in the first patient raised durability questions. If you have an implant and the maker goes bankrupt, who maintains it? Who removes it safely?' },
+    { q:'Who owns your neural data?', a:'Most countries have no laws addressing neural data privacy. Only a handful of U.S. states have begun to as well (Boonstra, 2025). As this field continues to evolve, more laws need to be put in place to ensure that personal data is safe.' },
+    { q:'What happens when the company shuts down?', a:'Not hypothetical. In 2024, Neuralink faced scrutiny over long-term device support after thread retraction in the first patient raised durability questions. If you have an implant and the maker goes bankrupt, who maintains it? Who removes it safely? These are some of the questions that need to be answered before BCIs become widely available for public use.' },
     { q:'Is "voluntary consent" really voluntary?', a:'People with severe paralysis are often desperate. When a BCI is your only hope of communicating with your family, the line between hope and informed consent gets blurry. Bioethicists call this "therapeutic misconception".', n:5 },
-    { q:'What about enhancement?', a:'Once BCIs reliably restore function in injured people, the next question is whether they should also enhance healthy ones. Better memory. Faster reaction time. Brain-to-brain communication. These are not sci-fi questions any more. They are policy decisions for the next decade.' },
+    { q:'What about enhancement?', a:'Once BCIs reliably restore function in injured people, the next question is whether they should also enhance healthy ones. Better memory, faster reaction time or possibly even brain-to-brain communication are all now possible, however is this ethical for the evolution of the human race?' },
   ];
   const [open, setOpen] = useState(0);
   return (
@@ -185,7 +185,7 @@ function Timeline() {
       items:[
         { h:'Wired implants in clinical trials', d:'BrainGate, Synchron, Neuralink, and Onward run small cohort studies with big results.' },
         { h:'Walk-again proofs of concept', d:'Brain-spine interface in <i>Nature</i>. Speech BCIs near texting speed.' },
-        { h:'No consumer products yet', d:'Everything is still research; the gap to home use is wide.' },
+        { h:'No consumer products yet', d:'Everything is still research, no consumer products yet' },
       ]
     },
     {

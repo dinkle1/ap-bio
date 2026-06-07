@@ -375,7 +375,7 @@ function Section8b() {
 
         <Reveal delay={140}>
           <p className="body" style={{ marginTop: 60, maxWidth: 760, fontSize: 17 }}>
-            Two companies. Two different ideas about what a BCI is even for. Neuralink is going after motor restoration in people with severe disability, where the bandwidth gain is worth a craniotomy. Kernel is going after brain health for everyone, where the surgical cost is zero and the signal is good enough to track depression treatment response or detect early signs of cognitive decline. The next decade will likely include both.
+            These two companies take completely different approaches to BCI. Neuralink is going after motor restoration in people with severe disability. Kernel is going after brain health for everyone, where the surgical cost is zero and the signal is good enough to track depression treatment response or detect early signs of cognitive decline. This shows the wide range of applications of BCIs
           </p>
         </Reveal>
       </div>

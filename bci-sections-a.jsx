@@ -153,7 +153,7 @@ function Section1() {
         <div style={{ display:'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 40, marginTop: 80 }}>
           {[
             { n:'01', h:'Record', body: 'Sensors pick up electrical signals from the brain, whether at the scalp, on the surface, or from the cortex itself.', accent:'var(--electric)' },
-            { n:'02', h:'Decode', body: 'A machine-learning model learns to recognize what those patterns mean: left hand vs. right, A vs. B, walk vs. stop.', accent:'var(--signal)' },
+            { n:'02', h:'Decode', body: 'A machine-learning model learns to recognize what those patterns mean. For example, left hand vs. right or walk vs. stop.', accent:'var(--signal)' },
             { n:'03', h:'Act', body: 'The system fires a command to an external device: a cursor, a robotic arm, a wheelchair, a spinal stimulator.', accent:'#9aff9c' },
           ].map((c, i) => (
             <Reveal key={c.n} delay={i*80}>
@@ -168,7 +168,7 @@ function Section1() {
 
         <Reveal delay={100}>
           <p className="body" style={{ marginTop: 100, maxWidth: 720, fontSize: 17 }}>
-            The idea goes back decades. A landmark 2002 paper by Jonathan Wolpaw and colleagues<FN n={1} /> articulated the framework that modern BCIs still follow: electrical activity recorded from the scalp can serve as a reliable, non-muscular channel for people who cannot move or speak. The science gets complicated fast. The core idea stays simple: your brain is talking, and we are finally learning how to listen.
+            The idea goes back decades. A landmark 2002 paper by Jonathan Wolpaw and colleagues<FN n={1} /> articulated the framework that modern BCIs still follow: electrical activity recorded from the scalp can serve as a reliable, non-muscular channel for people who cannot move or speak.
           </p>
         </Reveal>
         <NeuronPanel />
@@ -389,7 +389,7 @@ function Section2() {
         <SectionHeader
           num="02"
           title='The brain doesn&rsquo;t know <em>it&rsquo;s paralyzed.</em>'
-          sub="When the spinal cord is severed, the brain keeps broadcasting. Motor cortex lights up exactly the way it would in an uninjured person. BCIs are just building a new receiver."
+          sub="When the spinal cord is severed, the brain keeps sending signals. BCIs recieve these signals and decode them when the body cannot."
         />
         <Reveal>
           <SpinalBypass />
@@ -398,14 +398,14 @@ function Section2() {
         <div style={{ display:'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80, marginTop: 100, alignItems: 'start' }}>
           <Reveal>
             <blockquote className="pullquote">
-              The brain is still broadcasting.<br/>BCIs are just building a new receiver.
+              BCIs recieve these signals and decode them when the body cannot.
             </blockquote>
           </Reveal>
           <Reveal delay={100}>
             <p className="body">
-              The spinal cord acts like a cable between your brain and your body. Paralysis happens when that cable gets cut. The brain is still sending messages like &ldquo;move my left hand&rdquo; or &ldquo;take a step,&rdquo; but those messages cannot get through. They are being broadcast into silence.
+              The spinal cord acts like a cable between your brain and your body. Paralysis happens when that cable gets cut. The brain is still sending messages like &ldquo;move my left hand&rdquo; or &ldquo;take a step,&rdquo; but those messages cannot get through.
               <br/><br/>
-              Neuroscientists have shown that when a person with paralysis simply <em style={{color:'var(--text)', fontStyle:'italic'}}>imagines</em> moving their arm, their motor cortex generates activity patterns that a BCI can read — even though those patterns are not identical to actual movement. <strong>That preserved neural activity is the raw material a BCI works with.</strong>
+              Research has shown that when a person with paralysis simply <em style={{color:'var(--text)', fontStyle:'italic'}}>imagines</em> moving their arm, their motor cortex generates activity patterns that a BCI can read and then translate.
             </p>
           </Reveal>
         </div>
@@ -565,13 +565,13 @@ function Section3() {
           num="03"
           eyebrow="Modalities"
           title='Two ways to <em>listen</em> to a brain.'
-          sub="The biggest divide in BCI: do you need to cut the skull open? Three real systems sit on a spectrum from cap-on-head to electrodes-in-cortex. Each makes a trade."
+          sub="Do you need to cut the skull open to get accurate readings?"
         />
         <Section3Cards />
 
         <Reveal>
           <p className="body" style={{ marginTop: 70, maxWidth: 760, fontSize: 17 }}>
-            EEG signals recorded at the scalp are blurry. Thousands of neurons fire at once and their signals smear together, like trying to hear a single conversation in a stadium<FN n={2} />. Implanted arrays pick up individual neurons instead. The signal quality is far better, but brain surgery carries real risks, and scar tissue gradually degrades the array over time<FN n={3} />. ECoG, a grid on the cortex&rsquo;s surface, sits between the two and is where many researchers are now focusing. Spatial resolution drops from roughly 50&ndash;100 µm at the cortex to several centimetres at the scalp, a difference of three orders of magnitude<FN n={6} />.
+            EEG signals recorded at the scalp are blurry. Thousands of neurons fire at once and their signals smear together<FN n={2} />. Implanted arrays pick up individual neurons instead. The signal quality is far better, but brain surgery carries real risks, and scar tissue gradually degrades the array over time<FN n={3} />. ECoG, a grid on the cortex&rsquo;s surface, sits between the two and is where many researchers are now focusing. Spatial resolution drops from roughly 50&ndash;100 µm at the cortex to several centimeters at the scalp<FN n={6} />.
           </p>
         </Reveal>
       </div>
@@ -649,7 +649,7 @@ function NeuronPanel() {
     {
       num: '③', color: 'var(--signal)',
       title: 'Repolarization',
-      body: 'Na⁺ channels inactivate. Delayed voltage-gated K⁺ channels open — K⁺ flows out, restoring the negative interior. Full spike duration: ~1–2 ms.',
+      body: 'Na⁺ channels inactivate. Delayed voltage-gated K⁺ channels open. K⁺ flows out, restoring the negative interior. Full spike duration: ~1–2 ms.',
     },
     {
       num: '④', color: 'var(--mute)',
@@ -659,7 +659,7 @@ function NeuronPanel() {
     {
       num: '⑤', color: '#9aff9c',
       title: 'Synapse: Ca²⁺ → transmitter release',
-      body: 'At the axon terminal, depolarization opens voltage-gated Ca²⁺ channels. Ca²⁺ influx triggers vesicle fusion and neurotransmitter release — glutamate (excitatory) or GABA (inhibitory) — onto the next cell.',
+      body: 'At the axon terminal, depolarization opens voltage-gated Ca²⁺ channels. Ca²⁺ influx triggers vesicle fusion and neurotransmitter release: glutamate (excitatory) or GABA (inhibitory) onto the next cell.',
     },
   ];
 
@@ -702,7 +702,7 @@ function NeuronPanel() {
             </svg>
             <div style={{ marginTop: 16, padding: '12px 14px', background: 'rgba(76,240,255,0.04)', borderRadius: 8, border: '1px solid rgba(76,240,255,0.12)' }}>
               <div className="mono" style={{ color: 'var(--electric)', marginBottom: 6 }}>BCI intercept point</div>
-              <div className="body" style={{ fontSize: 13, lineHeight: 1.55 }}>Each spike creates an extracellular voltage blip (~100 µV–1 mV, ~1 ms duration). A Utah array electrode within 50–100 µm detects this directly. EEG, by contrast, averages summed field currents from millions of synchronously active cells — which is why scalp signals are orders of magnitude blurrier.</div>
+              <div className="body" style={{ fontSize: 13, lineHeight: 1.55 }}>Each spike creates an extracellular voltage blip (~100 µV–1 mV, ~1 ms duration). A Utah array electrode within 50–100 µm detects this directly. EEG, by contrast, averages summed field currents from millions of synchronously active cells, which is why scalp signals are orders of magnitude blurrier.</div>
             </div>
           </div>
           <div style={{ padding: '28px 32px' }}>

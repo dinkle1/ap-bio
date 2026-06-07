@@ -268,7 +268,7 @@ function Section4() {
         <SectionHeader
           num="04"
           title='Teaching a computer to <em>read your mind.</em>'
-          sub="Recording is half the job. The other half is figuring out what a pattern of firings means. The trick is to train a model to recognize it, the same way you would train one to recognize a face."
+          sub="Recording is the first half. The other half is figuring out what a pattern of firings means. Researchers use machine learning models to decode raw data into commands that can be transmitted throughout the body."
         />
         <Reveal>
           <DecoderDemo />
@@ -277,7 +277,7 @@ function Section4() {
           {[
             { stat:'2D', label:'cursor control', detail:'Early systems hit 70–80% accuracy moving a cursor in two dimensions.' },
             { stat:'3D', label:'robotic arms', detail:'More recent systems guide arms to reach for objects in 3D space.' },
-            { stat:'90', label:'characters/min', detail:<>A 2021 BrainGate participant typed by imagining handwriting — approaching smartphone texting speed.<FN n={7}/></> },
+            { stat:'90', label:'characters/min', detail:<>A 2021 BrainGate participant typed by imagining handwriting, this is approaching smartphone texting speed.<FN n={7}/></> },
             { stat:'62', label:'words/min · speech', detail:<>Speech BCIs decode attempted speech directly from cortex, in near-real time.<FN n={8}/></> },
           ].map((m, i) => (
             <Reveal key={m.stat} delay={i * 80}>
@@ -292,7 +292,7 @@ function Section4() {
 
         <Reveal>
           <p className="body" style={{ marginTop: 80, maxWidth: 760, fontSize: 17 }}>
-            Underneath all of this sits one concept: <strong>neuroplasticity.</strong> Patients who use BCIs regularly show <em style={{color:'var(--text)', fontStyle:'italic'}}>improvements</em> in signal quality over time, because their brain adapts to aim its signals at the decoder. The brain learns to speak the machine&rsquo;s language. The decoder learns the patient&rsquo;s brain. They meet in the middle.
+            Patients who use BCIs regularly show improvements in signal quality over time, because their brain adapts to aim its signals at the decoder.
           </p>
         </Reveal>
       </div>
