@@ -16,10 +16,8 @@ function Section7() {
       <div className="container">
         <SectionHeader
           num="07"
-          eyebrow="An Honest Look"
-          title='The hard problems<br/>we <em>haven&rsquo;t solved.</em>'
-          sub="BCIs are genuinely remarkable. They're also genuinely limited. The bars below show roughly where the field is on each problem, against what it would need to be for a real consumer product."
-          align="split"
+          title='The hard problems we <em>haven&rsquo;t solved.</em>'
+          sub="BCIs are severely limited. The bars below show roughly where the field is on each problem, against what it would need to be for a real consumer product."
         />
         <Reveal>
           <div className="panel" style={{ padding: '28px 32px' }}>
@@ -74,10 +72,10 @@ function LimitRow({ data }) {
 // SECTION 8 — Ethics: who owns your brain data?
 function EthicsPanel() {
   const items = [
-    { q:'Who owns your neural data?', a:'A BCI records the most intimate data imaginable: the electrical patterns of your thoughts. When a company implants a device in your brain, who owns the data it generates? Most countries have no laws addressing this. Only a handful of U.S. states have begun to.', n:5 },
-    { q:'What happens when the company shuts down?', a:'Not hypothetical. In 2024 both Synchron and Neuralink faced questions about long-term device support. If you have an implant and the maker goes bankrupt, who maintains it? Who removes it safely?' },
+    { q:'Who owns your neural data?', a:'Most countries have no laws addressing neural data privacy. Only a handful of U.S. states have begun to as well (Boonstra, 2025). As this field continues to evolve, more laws need to be put in place to ensure that personal data is safe.' },
+    { q:'What happens when the company shuts down?', a:'Not hypothetical. In 2024, Neuralink faced scrutiny over long-term device support after thread retraction in the first patient raised durability questions. If you have an implant and the maker goes bankrupt, who maintains it? Who removes it safely? These are some of the questions that need to be answered before BCIs become widely available for public use.' },
     { q:'Is "voluntary consent" really voluntary?', a:'People with severe paralysis are often desperate. When a BCI is your only hope of communicating with your family, the line between hope and informed consent gets blurry. Bioethicists call this "therapeutic misconception".', n:5 },
-    { q:'What about enhancement?', a:'Once BCIs reliably restore function in injured people, the next question is whether they should also enhance healthy ones. Better memory. Faster reaction time. Brain-to-brain communication. These are not sci-fi questions any more. They are policy decisions for the next decade.' },
+    { q:'What about enhancement?', a:'Once BCIs reliably restore function in injured people, the next question is whether they should also enhance healthy ones. Better memory, faster reaction time or possibly even brain-to-brain communication are all now possible, however is this ethical for the evolution of the human race?' },
   ];
   const [open, setOpen] = useState(0);
   return (
@@ -167,9 +165,8 @@ function Section8() {
         <SectionHeader
           num="08"
           eyebrow="Ethics"
-          title='Who <em>owns</em><br/>your brain data?'
+          title='Who <em>owns</em> your brain data?'
           sub="BCIs don't just raise engineering problems. They raise questions about consent, ownership, and what it means to share the most intimate data a human can produce."
-          align="split"
         />
         <Reveal>
           <EthicsPanel />
@@ -188,7 +185,7 @@ function Timeline() {
       items:[
         { h:'Wired implants in clinical trials', d:'BrainGate, Synchron, Neuralink, and Onward run small cohort studies with big results.' },
         { h:'Walk-again proofs of concept', d:'Brain-spine interface in <i>Nature</i>. Speech BCIs near texting speed.' },
-        { h:'No consumer products yet', d:'Everything is still research; the gap to home use is wide.' },
+        { h:'No consumer products yet', d:'Everything is still research, no consumer products yet' },
       ]
     },
     {
@@ -245,10 +242,8 @@ function Section9() {
       <div className="container">
         <SectionHeader
           num="10"
-          eyebrow="What Comes Next"
           title='The next <em>ten years.</em>'
           sub="The BCI field is moving fast, and not always in obvious directions. Here are the frontiers worth watching."
-          align="split"
         />
         <Reveal>
           <Timeline />
@@ -321,22 +316,30 @@ function Biblio() {
       t:'EEG-based BCIs on motor imagery paradigm using wearable technologies: A systematic review.', j:'Sensors 23(5), 2798.',
       doi:'10.3390/s23052798', pmid:'36905004',
       url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC10007053/' },
-    { n:3, a:'Hochberg, L. R., Bacher, D., Jarosiewicz, B., Masse, N. Y., et al.', y:'2023',
-      t:'Interim safety profile from the feasibility study of the BrainGate neural interface system.', j:'Neurology 100(4), e413–e423.',
-      doi:'10.1212/WNL.0000000000201707',
+    { n:3, a:'Rubin, D. B., Ajiboye, A. B., Barefoot, L., et al.', y:'2023',
+      t:'Interim safety profile from the feasibility study of the BrainGate neural interface system.', j:'Neurology 100(11), e1177–e1192.',
+      doi:'10.1212/WNL.0000000000201707', pmid:'36639237',
       url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC10074470/' },
     { n:4, a:'Lorach, H., Galvez, A., Spagnolo, V., et al.', y:'2023',
       t:'Walking naturally after spinal cord injury using a brain–spine interface.', j:'Nature 618(7963), 126–133.',
       doi:'10.1038/s41586-023-06094-5', pmid:'37225984',
       url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC10232367/' },
     { n:5, a:'Boonstra, J. T.', y:'2025',
-      t:'Ethical imperatives in the commercialization of brain-computer interfaces.', j:'IBRO Neuroscience Reports 18, 587–594.',
+      t:'Ethical imperatives in the commercialization of brain-computer interfaces.', j:'IBRO Neuroscience Reports 19, 718–724.',
       doi:'10.1016/j.ibneur.2025.10.004',
       url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12553070/' },
     { n:6, a:'Slutzky, M. W.', y:'2019',
-      t:'Brain-machine interfaces: Powerful tools for clinical treatment of brain disorders.', j:'The Neuroscientist 25(2), 139–154.',
+      t:'Brain-machine interfaces: Powerful tools for clinical treatment and neuroscientific investigations.', j:'The Neuroscientist 25(2), 139–154.',
       doi:'10.1177/1073858418775355', pmid:'29772957',
-      url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC6249701/' },
+      url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC6611552/' },
+    { n:7, a:'Willett, F. R., Avansino, D. T., Hochberg, L. R., Henderson, J. M., & Shenoy, K. V.', y:'2021',
+      t:'High-performance brain-to-text communication via handwriting.', j:'Nature 593(7858), 249–254.',
+      doi:'10.1038/s41586-021-03506-2', pmid:'33981047',
+      url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC8163299/' },
+    { n:8, a:'Willett, F. R., Kunz, E. M., Fan, C., et al.', y:'2023',
+      t:'A high-performance speech neuroprosthesis.', j:'Nature 620(7976), 1031–1036.',
+      doi:'10.1038/s41586-023-06377-x', pmid:'37498468',
+      url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC10468393/' },
   ];
   return (
     <section id="refs" className="section" style={{ borderTop:'1px solid var(--line)' }}>

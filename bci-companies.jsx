@@ -282,10 +282,8 @@ function Section8b() {
       <div className="container">
         <SectionHeader
           num="09"
-          eyebrow="Who Is Building This?"
           title='Two bets on the <em>same brain.</em>'
           sub="Two of the most-watched BCI companies are betting on opposite strategies. Neuralink goes inside the skull for maximum signal. Kernel stays outside for maximum access. Click either card to focus."
-          align="split"
         />
 
         {/* axis label */}
@@ -337,7 +335,7 @@ function Section8b() {
               specs={[
                 { k: 'approach',     v: 'Wearable optical helmet', big: true },
                 { k: 'modality',     v: 'TD-fNIRS (time-domain near-infrared spectroscopy)' },
-                { k: 'channels',     v: '~2,800 channels from 52 modules' },
+                { k: 'channels',     v: '~2,100 source-detector channels from 52 modules' },
                 { k: 'surgery',      v: 'None. Put it on, scan in 30 minutes.' },
                 { k: 'humans',       v: 'Hundreds of scans across partner clinics' },
                 { k: 'best for',     v: 'Brain health tracking, depression, MCI detection' },
@@ -377,7 +375,7 @@ function Section8b() {
 
         <Reveal delay={140}>
           <p className="body" style={{ marginTop: 60, maxWidth: 760, fontSize: 17 }}>
-            Two companies. Two different ideas about what a BCI is even for. Neuralink is going after motor restoration in people with severe disability, where the bandwidth gain is worth a craniotomy. Kernel is going after brain health for everyone, where the surgical cost is zero and the signal is good enough to track depression treatment response or detect early signs of cognitive decline. The next decade will likely include both.
+            These two companies take completely different approaches to BCI. Neuralink is going after motor restoration in people with severe disability. Kernel is going after brain health for everyone, where the surgical cost is zero and the signal is good enough to track depression treatment response or detect early signs of cognitive decline. This shows the wide range of applications of BCIs
           </p>
         </Reveal>
       </div>
